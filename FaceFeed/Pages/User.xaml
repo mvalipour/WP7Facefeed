@@ -1,0 +1,100 @@
+﻿<phone:PhoneApplicationPage xmlns:my="clr-namespace:FaceFeed.Modules"  
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:adv="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+    x:Class="FaceFeed.Pages.User_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:tilt="clr-namespace:ControlTiltEffect;assembly=System.Extensions.UI"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <adv:AdControl x:Name="adControl" ApplicationId="5292a758-4d9e-407a-8d3a-80392245553c" AdUnitId="10029384" Width="480" Height="80" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <controls:Pivot Title="USER" x:Name="pivot" Foreground="{StaticResource AppForegroundBrush}">
+                <controls:PivotItem Header="profile">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.5*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="profileContainer" VerticalAlignment="Top">
+                                <Image Source="{Binding Converter={StaticResource byteArrConverter}}" HorizontalAlignment="Left" />
+                            </Grid>
+                            <Grid Grid.Column="1" VerticalAlignment="Top" MaxHeight="200" tilt:TiltEffect.IsTiltEnabled="True">
+                                <StackPanel x:Name="statusContainer">
+                                    <TextBlock Foreground="{StaticResource AppForegroundBrush}" Text="{Binding Story}" TextWrapping="Wrap" />
+                                </StackPanel>
+                                <Button Opacity="0" x:Name="btnStatus" Click="btnStatus_Click" />
+                            </Grid>
+                        </Grid>
+                        <StackPanel Grid.Row="1">
+                            <TextBox AcceptsReturn="True" x:Name="txtWallMessage" />
+                            <Button x:Name="btnPost" Content="post" HorizontalAlignment="Right" Width="200" Click="btnPost_Click" />
+                        </StackPanel>
+                    </Grid>
+                </controls:PivotItem>
+                <controls:PivotItem Header="feed">
+                    <ListBox x:Name="lstFeeds" SelectionChanged="lstFeeds_SelectionChanged" Style="{StaticResource listTemplate_FeedItem}" />
+                </controls:PivotItem>
+                <controls:PivotItem Header="photos">
+                    <ListBox x:Name="lstPhotos" SelectionChanged="lstPhotos_SelectionChanged" Style="{StaticResource listTemplate_Photo}" />
+                </controls:PivotItem>
+                <controls:PivotItem Header="albums">
+                    <ListBox x:Name="lstAlbums" SelectionChanged="lstAlbums_SelectionChanged" Style="{StaticResource listTemplate_Album}" />
+                </controls:PivotItem>
+                <controls:PivotItem Header="pages">
+                    <ListBox x:Name="lstPages" SelectionChanged="lstPages_SelectionChanged" Style="{StaticResource listTemplate_Page}" />
+                </controls:PivotItem>
+                <controls:PivotItem Header="groups">
+                    <ListBox x:Name="lstGroups" SelectionChanged="lstGroups_SelectionChanged" Style="{StaticResource listTemplate_Group}" />
+                </controls:PivotItem>
+                <controls:PivotItem Header="notes">
+                    <ListBox x:Name="lstNotes" SelectionChanged="lstNotes_SelectionChanged" Style="{StaticResource listTemplate_Note}" />
+                </controls:PivotItem>
+                <controls:PivotItem Header="mutual">
+                    <ListBox x:Name="lstMutuals" SelectionChanged="lstMutuals_SelectionChanged" Style="{StaticResource listTemplate_User}" />
+                </controls:PivotItem>
+            </controls:Pivot>
+            <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="12">
+                <Image Source="/images/icons/home.b.png" Width="48" />
+                <Button Opacity="0" x:Name="btnHome" Click="btnHome_Click" />
+            </Grid>
+            <my:LoadingPanel x:Name="progressbar" />
+            <my:PageMenu x:Name="pageMenu"  Visibility="Collapsed"/>
+        </Grid>
+    </Grid>
+
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/pin.png" Text="pin" x:Name="btnPin" Click="btnPin_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/menu.png" Text="menu" x:Name="btnMenu" Click="btnMenu_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/sync.png" Text="sync" x:Name="btnSync" Click="btnSync_Click" />
+            <shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="PersianFacebook.Modules.TileBackTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="173" d:DesignWidth="173">
+
+    <Grid>
+        <Image Source="/images/tile.bg.png" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Margin="6 3 6 0" Opacity="0.75" TextAlignment="Right" Text="2 hours ago" Foreground="White" x:Name="lblItemDate" FontSize="14" />
+            <Grid Margin="6 6 6 0" Grid.Row="1">
+                <TextBlock Text="Reyhaneh Eb added a new photo of you" LineHeight="18" LineStackingStrategy="BlockLineHeight" TextWrapping="Wrap" Foreground="White" x:Name="lblItem" FontSize="16" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.25" />
+                </Grid.Background>
+                <TextBlock Margin="6 3" VerticalAlignment="Center" Text="Zizi Vazizi" TextWrapping="Wrap" Foreground="White" x:Name="lblUser" FontSize="20" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

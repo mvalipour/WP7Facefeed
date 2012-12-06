@@ -1,0 +1,14 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="FaceFeed" EntryPointType="FaceFeed.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="FaceFeed" Source="FaceFeed.dll" />
+    <AssemblyPart x:Name="FaceFeed.Model" Source="FaceFeed.Model.dll" />
+    <AssemblyPart x:Name="FaceFeed.Tasks" Source="FaceFeed.Tasks.dll" />
+    <AssemblyPart x:Name="Microsoft.Advertising.Mobile.UI" Source="Microsoft.Advertising.Mobile.UI.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Extensions" Source="System.Extensions.dll" />
+    <AssemblyPart x:Name="System.Extensions.UI" Source="System.Extensions.UI.dll" />
+    <AssemblyPart x:Name="Facebook" Source="Facebook.dll" />
+    <AssemblyPart x:Name="Microsoft.Advertising.Mobile" Source="Microsoft.Advertising.Mobile.dll" />
+  </Deployment.Parts>
+</Deployment>

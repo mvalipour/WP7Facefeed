@@ -1,0 +1,18 @@
+﻿این نرم افزار به شما امکان دسترسی به فیسبوک را میدهد. این نرم افزار قابلیت عبور از فیلترینگ را نیز شامل میشود.
+
+This is a Facebook client for Windows Phone that allows you read through your facebook account and access to feed, photo, albums, links, etc of your profile and your friends. 
+The primary text of this application is in Persian.
+
+
+TestNotes:
+
+Setup page translated: 
+Method 1: Click on the button and send the email to yourself, open it in your PC follow the link. 
+Method 2: Click on the button follow the link on your mobile's browser. 
+Final step: After completing the authentication when you saw "success" message, copy and paste the url of your browser into the textbox and press the button next to it. 
+
+Everything else if in english. (will be translated in near future)
+
+
+################## remember
+uncheck - malaysia, filip, china, et...

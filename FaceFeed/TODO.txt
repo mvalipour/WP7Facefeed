@@ -1,0 +1,32 @@
+﻿- translation
+- update image status
+	o aargh - needs the image to be uploaded somewhere
+- farsi fonts
+	o not possible
+- messages
+- farsi input
+- send message to friend
+	o not possible
+- send friend request
+	o not possible
+- sharing settings (security)
+- toast notification
+- landscape? :\
+
+- "load more..." support for feed (1.3)
+- multi line comment 
+- save image (1.3)
+- copy text (1.3)
+- scroll to top when next/previous (1.3)
+- relevant icon for feed item link
+- toast notification for notifications (background agent) (1.3)
+- unread notifications and mark as read (1.3)
+- live tile and notif count (1.3)
+- persian keyboard
+- add friend request (browser)
+- chat
+- help
+- my wall (1.3)
+- what's new (1.3)
+- update live tile, when reading notifications
+- my stat doesn't change 

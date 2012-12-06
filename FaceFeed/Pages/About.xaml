@@ -1,0 +1,57 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="FaceFeed.Pages.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource AppBackgroundBrush}">
+        <controls:Pivot Title="FACE FEED" Foreground="{StaticResource AppForegroundBrush}">
+            <controls:PivotItem Header="about">
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <StackPanel VerticalAlignment="Top" Margin="0 20 0 0">
+                        <!--<Image Source="/Images/StackLogo.PNG" Width="110"  Margin="0 0 0 120"/>-->
+                        <TextBlock Text="version" TextAlignment="Center" Foreground="{StaticResource AppForegroundBrush}" />
+                        <TextBlock Text="1.4.0.0" TextAlignment="Center" Foreground="{StaticResource AppForegroundBrush}" />
+                        <StackPanel HorizontalAlignment="Center" Margin="0 10 0 0">
+                            <HyperlinkButton FontFamily="/Fonts/Nazanin.zip#B Nazanin" FontWeight="Bold" FontSize="42" Content="به این نرم افزار نمره بدهید!" FlowDirection="RightToLeft" Margin="0 42 0 0" Click="HyperlinkButton_Click_1" Foreground="{StaticResource AppForegroundBrush}" />
+                            <HyperlinkButton FontFamily="/Fonts/Nazanin.zip#B Nazanin" FontWeight="Bold" FontSize="42" Content="سایر نرم افزارهای فارسی" Margin="0 42 0 0" Click="btnMore_Click" Foreground="{StaticResource AppForegroundBrush}" />
+                            <HyperlinkButton FontFamily="/Fonts/Nazanin.zip#B Nazanin" FontWeight="Bold" FontSize="42" Content="صفحه ی فیسبوک ما" Margin="0 42 0 0" Click="HyperlinkButton_Click_2" Foreground="{StaticResource AppForegroundBrush}" />
+                            <HyperlinkButton FontFamily="/Fonts/Nazanin.zip#B Nazanin" FontWeight="Bold" FontSize="42" Content="تماس با ما" Margin="0 42 0 0" Click="HyperlinkButton_Click" Foreground="{StaticResource AppForegroundBrush}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="terms">
+                <StackPanel>
+                    <TextBlock Text="- This application is in no way affiliated with Facebook Inc. and simply provides the data feed of your facebook account." TextWrapping="Wrap" />
+                    <TextBlock Text="- This application do not guarantee that the data displayed is always accurate, up-to-date and that the service is uninterrupted." TextWrapping="Wrap" />
+                    <HyperlinkButton Content="facebook.com's terms of use" x:Name="btnTerms" Click="btnTerms_Click" Foreground="{StaticResource AppForegroundBrush}" Margin="0 24" />
+                </StackPanel>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

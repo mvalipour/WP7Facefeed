@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="PersianFacebook.Modules.TileFrontMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="173" d:DesignWidth="173">
+    
+    <Grid x:Name="LayoutRoot">
+        <Image x:Name="imgImage" Source="/images/tile.front.c.png" />
+        <TextBlock Margin="0 0 0 50" x:Name="txtCount" Text="5" TextAlignment="Center" VerticalAlignment="Center" FontSize="80" />
+    </Grid>
+</UserControl>

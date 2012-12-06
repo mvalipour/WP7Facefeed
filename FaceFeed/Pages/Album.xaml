@@ -1,0 +1,82 @@
+﻿<phone:PhoneApplicationPage xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:my="clr-namespace:FaceFeed.Modules"  
+    xmlns:adv="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+    x:Class="FaceFeed.Pages.Album_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <adv:AdControl x:Name="adControl" ApplicationId="5292a758-4d9e-407a-8d3a-80392245553c" AdUnitId="10029384" Width="480" Height="80" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <controls:Pivot Title="PHOTO ALBUM" x:Name="pivot" Foreground="{StaticResource AppForegroundBrush}">
+            <controls:PivotItem Header="photos">
+                <ListBox x:Name="lstPhotos" SelectionChanged="lstPhotos_SelectionChanged" Style="{StaticResource listTemplate_Photo}" />
+            </controls:PivotItem>
+                <controls:PivotItem Header="comments">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ScrollViewer>
+                            <StackPanel>
+                                <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled" x:Name="lstComments" SelectionChanged="lstComments_SelectionChanged" Style="{StaticResource listTemplate_Comment}" />
+                                <Button Visibility="Collapsed" Content="Load More" x:Name="btnCommentsMore" Click="btnCommentsMore_Click"></Button>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <Grid Grid.Row="1">
+                            <TextBox x:Name="txtComment" KeyDown="txtComment_KeyDown" />
+                        </Grid>
+                    </Grid>
+                </controls:PivotItem>
+                <controls:PivotItem Header="likes">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="lstLikes" SelectionChanged="lstLikes_SelectionChanged" Style="{StaticResource listTemplate_Like}" />
+                    <Grid Grid.Row="1">
+                        <Button x:Name="btnLike" Content="like" HorizontalAlignment="Right" Width="200" Click="btnLike_Click" />
+                    </Grid>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="12">
+            <Image Source="/images/icons/home.b.png" Width="48" />
+            <Button Opacity="0" x:Name="btnHome" Click="btnHome_Click" />
+        </Grid>
+        <my:LoadingPanel x:Name="progressbar" />
+        <my:PageMenu x:Name="pageMenu"  Visibility="Collapsed"/>
+        </Grid>
+    </Grid>
+
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/menu.png" Text="menu" x:Name="btnMenu" Click="btnMenu_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/sync.png" Text="sync" x:Name="btnSync" Click="btnSync_Click" />
+            <shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
